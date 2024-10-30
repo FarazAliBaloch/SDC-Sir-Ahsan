@@ -4,15 +4,18 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('layouts.web');
-});
+route::get('/',[HomeController::class,'index']);
+
+// Route::get('/layouts', function () {
+//     return view('layouts.web');
+// });
 
 
-Route::get('/post', function () {
-    return view('post');
-});
+// Route::get('/post', function () {
+//     return view('post');
+// });
 
 
 Route::middleware('auth')->name('course.')->prefix('course')->group(function() {
